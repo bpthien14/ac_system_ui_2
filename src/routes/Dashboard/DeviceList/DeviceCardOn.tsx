@@ -44,6 +44,8 @@ const DeviceCardOn = ({
       setIsLoading(true)
       getStats(device._id).then((stats) => {
         if (stats.temp >= 32) {
+          setEnvTemp(stats.temp)
+          setHumidity(stats.humidity)
           Swal.fire(
             warningAlert(
               `High Temperature on device ${device.name}`

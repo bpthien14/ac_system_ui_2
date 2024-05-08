@@ -33,6 +33,7 @@ const DeviceCardOff = ({
       Swal.fire(loading)
       await setDevice({ deviceId: device._id, userId: 'test' })
 
+      console.log(device)
       await sendSignal({
         deviceId: device._id,
         userId: 'test',
